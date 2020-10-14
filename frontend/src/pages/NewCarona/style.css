@@ -1,44 +1,61 @@
-.register-container{
+.new-carona nav ul li{
+    position:relative;
+    top:1px
+}
+
+.new-carona .adjust{
+    margin-top: 14px;
+}
+
+.new-carona img{
+    width: 80px;
+    height: 80px;
+}
+
+
+.new-carona .register-carona-container{
     width: 100%;
     max-width: 1120px;
-    height: 100vh;
+    height: 40vh;
     margin: 0 auto;
     display: flex;
 }
 
-.register-form{
+
+.new-carona .register-form{
     position: relative;
-    top: 15vh;
+    top: 3vh;
     margin-left: auto;
     margin-right: auto;
-    height: 450px;
+    height: 600px;
     width: 400px;
     background-color: #f2c94c;
     display: flex;
     flex-direction: column;
 }
 
-.register-submit{
+
+.new-carona .register-submit{
     display: flex;
     flex-direction: column;
     position: relative;
     top: 15px;
 }
 
-.register-container section input{
+.new-carona .register-carona-container section input{
     margin: 0 10px 0 10px;
     padding: 10px;
     border-style: none;
     background-color: #E0E0E0;
 }
 
-.register-container section label{
+.new-carona .register-carona-container section label{
     margin-top: 10px;
     margin-left: 10px;
     margin-bottom: 3px;
 }
 
-.button-register{
+.new-carona .button-register{
     position: relative;
     top: 30px;
     margin: 0 10px 0 10px;
@@ -47,26 +64,31 @@
     border-style: none;
 }
 
-.register-container a{
+.new-carona .register-carona-container a{
     position: relative;
-    top: 35px;
+    top: 20px;
     left: 10px;
     color: #4472b2;
 }
 
-
-.register-container form .Cellphone{
-    position: relative;
-    display: flex;
-    top: 10px;
-}
-
-.register-container form .Cellphone select{
+.register-submit .select{
     font: 400 14px Anton, sans-serif;
     position: relative;
     background-color: #e0e0e0;
     border-style: none;
     left: 10px;
-    width: 100px;
+    width: 380px;
     height: 47px;
+}
+
+.react-datetime-picker__wrapper{
+    border-style: none;
+
+}
+
+.react-datetime-picker{
+    padding: 10px;
+    position: relative;
+    right: 12px;
+    bottom: 5px;
 }

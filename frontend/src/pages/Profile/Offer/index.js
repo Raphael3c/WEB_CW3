@@ -4,11 +4,9 @@ import {Link, useHistory} from 'react-router-dom';
 
 import {FiMail} from 'react-icons/fi';
 
-import api from '../../services/api';
+import api from '../../../services/api';
 
-import Logo from '../../assets/logo1.svg'
-
-import './style.css';
+import Logo from '../../../assets/logo1.svg'
 
 export default function Profile(){
     const [carona, setCarona] = useState([]);
@@ -17,7 +15,7 @@ export default function Profile(){
     const history = useHistory();
 
     useEffect(() => {
-        api.get('caronas').then(response => {
+        api.get('caronas', { params: { tipo:'Oferta' } }).then(response => {
             setCarona(response.data);
         })
     }, [])
@@ -44,7 +42,7 @@ export default function Profile(){
                 </nav>
             </header>
             <div className="buttons-filter">
-                <Link className="button-profile-carona" to='/offer'>Ofertas</Link>
+                <Link className="button-profile-carona" to='/profile'>Voltar</Link>
                 <Link className="button-profile-pedidos" to='/request'>Pedidos</Link>
             </div>
             <div className='table'>
@@ -62,10 +60,10 @@ export default function Profile(){
                         </tr>
                     {carona.map(carona => (
                         <tr key={carona.id}>
-                            <td widht='200'>{carona.name}</td>
-                            <td widht='200'>{carona.cidade}</td>
-                            <td widht='200'>{carona.origem}</td>
-                            <td widht='200'>{carona.destino}</td>
+                            <td>{carona.name}</td>
+                            <td>{carona.cidade}</td>
+                            <td>{carona.origem}</td>
+                            <td>{carona.destino}</td>
                             <td width='200'>{carona.comentario}</td>
                             <td>{carona.data}</td>
                             <td>{carona.tipo}</td>

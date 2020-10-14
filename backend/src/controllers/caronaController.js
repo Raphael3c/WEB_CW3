@@ -13,29 +13,23 @@ module.exports = {
         if(tipo == 0){
             caronas = await connection('carona')
             .join('users', 'users.id','=','carona.user_id')
-            .limit(5)
-            .offset((page-1)*5)
-            .select(['carona.*', 'users.name', 'users.email', 'users.wpp']);
+            .select(['carona.*', 'users.name', 'users.wpp']);
 
             response.header('X-Total-Count', count['count(*)']);
         }
-        else if(tipo == 1){
+        else if(tipo == "Oferta"){
             caronas = await connection('carona')
             .join('users', 'users.id','=','carona.user_id')
-            .where('carona.tipo', '=' , '1')
-            .limit(5)
-            .offset((page-1)*5)
-            .select(['carona.*', 'users.name', 'users.email', 'users.wpp']);
+            .where('carona.tipo', '=' , 'Oferta')
+            .select(['carona.*', 'users.name', 'users.wpp']);
 
             response.header('X-Total-Count', count['count(*)']);
         }
-        else if(tipo == 2){
+        else if(tipo == "Pedido"){
             caronas = await connection('carona')
             .join('users', 'users.id','=','carona.user_id')
-            .where('carona.tipo', '=' , '2')
-            .limit(5)
-            .offset((page-1)*5)
-            .select(['carona.*', 'users.name', 'users.email', 'users.wpp']);
+            .where('carona.tipo', '=' , 'Pedido')
+            .select(['carona.*', 'users.name', 'users.wpp']);
 
             response.header('X-Total-Count', count['count(*)']);
         }
